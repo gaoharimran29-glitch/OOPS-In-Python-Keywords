@@ -1,7 +1,8 @@
 # Python Practicals (Q1–Q13)
 
-```python
+
 # 1. Write a program to find the roots of a quadratic equation
+```python
 a = int(input("Enter coefficient of x^2: "))
 b = int(input("Enter coefficient of x: "))
 c = int(input("Enter constant: "))
@@ -15,10 +16,10 @@ else:
    x2 = ((-b) - (d**0.5)) / (2 * a)
    print("First sol. is: " , x1)
    print("Second sol. is: " , x2)
-
-
+```
 # 2. Write a program to accept a number ‘n’ and 
 # a. Check if ’n’ is prime 
+```python
 n = int(input("Enter a number to check prime: "))
 if (n<0):
     print("It is a negtaive number")
@@ -36,8 +37,9 @@ else:
         print('It is a prime number')
     else: 
         print("It is not a prime number")
-
+```
 # b. Generate all prime numbers till ‘n’ 
+```python
 n = int(input("Enter a number till where you want all prime number: "))
 z = {}
 for i in range(2,n+1):
@@ -49,8 +51,9 @@ for i in range(2,n+1):
                 z.append(i)
 
 print(z)
-
+```
 # c. Generate first ‘n’ prime numbers This program may be done using functions
+```python
 def is_prime(x):
     if x<2:
         return False
@@ -71,23 +74,23 @@ def first_n_primes(n):
 n=int(input("Enter number of primes to generate: "))
 print(first_n_primes(n))
 
-
+```
 # 3. Write a program to create a pyramid of the character ‘*’ and a reverse pyramid
+```python
 rows = int(input("Enter number of rows: "))
 
-# Pyramid
 for i in range(1, rows+1):
     print(" "*(rows-i) + "*"*(2*i-1))
 
-# Reverse Pyramid
 for i in range(rows-1, 0, -1):
     print(" "*(rows-i) + "*"*(2*i-1))
 
-
+```
 # 4. Write a program that accepts a character and performs the following:
 # a. print whether the character is a letter or numeric digit or a special character. 
 # b. if the character is a letter, print whether the letter is uppercase or lowercase
 # c. if the character is a numeric digit, prints its name in text (e.g., if input is 9, output is NINE)
+```python
 import string
 import num2words 
 char = input("Enter any char: ")
@@ -102,10 +105,11 @@ elif (char in string.ascii_letters):
         print("It is a lowercase letter")
     elif (char in string.ascii_uppercase):
         print("It is a uppercase letter")
-
+```
 
 # 5. Write a program to perform the following operations on a string 
 # a. Find the frequency of a character in a string. 
+```python
 para = str(input("Enter string: "))
 char = str(input("Enter char to be searched: "))
 count = 0
@@ -113,25 +117,32 @@ for k in para:
    if (k==char):
       count += 1
 print("No. of occurence of" , char , "is" , count)
+```
 
 # b. Replace a character by another character in a string. 
+```python
 para = str(input("Enter string: "))
 char1 = str(input("Enter char to be replaced: "))
 char2 = str(input("Enter new char you want: "))
 print(para.replace(char1 , char2))
+```
 
 # c. Remove the first occurrence of a character from a string. 
+```python
 para = str(input("Enter string: "))
 char = str(input("Enter char whose first occurence to be removed: "))
 print(para.replace(char , "" , 1))
-
+```
 # d. Remove all occurrences of a character from a string.
+```python
 para = str(input("Enter string: "))
 char = str(input("Enter char whose first occurence to be removed: "))
 print(para.replace(char , ""))
 
+```
 
 # 6. Write a program to swap the first n characters of two strings.
+```python
 s1 = input("Enter first string: ")
 s2 = input("Enter second string: ")
 n = int(input("Enter number of characters to swap: "))
@@ -143,8 +154,9 @@ print("After swapping:")
 print("String 1:", s1_new)
 print("String 2:", s2_new)
 
-
+```
 # 7. Write a function that accepts two strings and returns the indices of all the occurrences of the second string in the first string as a list. If the second string is not present in the first string then it should return -1
+```python
 def find_all_occurrences(s, sub):
     indices = []
     start = 0
@@ -160,23 +172,26 @@ def find_all_occurrences(s, sub):
 
 print(find_all_occurrences("banana", "ana"))   
 
-
+```
 # 8. Write a program to create a list of the cubes of only the even integers appearing in the input list (may have elements of other types also)
 # a. 'for' loop 
+```python
 lst = [1,2,3,4,5,6,"a",8.5]
 cubes = []
 for i in lst:
     if isinstance(i,int) and i%2==0:
         cubes.append(i**3)
 print("Cubes using loop:", cubes)
-
+```
 # b. list comprehension
+```python
 cubes2 = [i**3 for i in lst if isinstance(i,int) and i%2==0]
 print("Cubes using comprehension:", cubes2)
 
-
+```
 # 9. Write a program to read a file and 
 # a. Print the total number of characters, words and lines in the file. 
+```python
 import string
 with open("new.txt") as f:
     data = f.read()
@@ -195,22 +210,25 @@ with open("new.txt") as f:
     print("No. of characters is " , count)
     print("No. of words is " , count2)
     print("No. of lines is " , count3)
-
+```
 # b. Calculate the frequency of each character in the file. Use a variable of dictionary type to maintain the count. 
+```python
 with open("new.txt") as f:
     data = f.read()
     dict = {}
     for i in data:
         dict[i] = dict.get(i ,0 ) + 1
 print(dict)
-    
+    ```
 # c. Print the words in reverse order. 
+```python
 with open("new.txt") as f:
     data = f.read()
     words = data.split()
     print(words[::-1])
-
+```
 # d. Copy even lines of the file to a file named ‘File1’ and odd lines to another file named ‘File2’.
+```python
 with open("new.txt", "r") as f, \
      open("file1.txt", "w") as f1, \
      open("file2.txt", "w") as f2:
@@ -220,9 +238,10 @@ with open("new.txt", "r") as f, \
         else:            # odd line
             f2.write(line)
 print("Lines copied")
-
+```
 
 # 10. Write a program to define a class Point with coordinates x and y as attributes. Create relevant methods and print the objects. Also define a method distance to calculate the distance between any two point objects.
+```python
 import math
 class Point:
     def __init__(self, x, y):
@@ -241,32 +260,44 @@ print(p1)
 print(p2)
 print("Distance:", p1.distance(p2))
 
-
+```
 # 11. Write a function that prints a dictionary where the keys are numbers between 1 and 5 and the values are cubes of the keys.
+```python
 def cube_dict():
     d = {i: i**3 for i in range(1,6)}
     print(d)
 cube_dict()
 
-
+```
 # 12. Consider a tuple t1=(1, 2, 5, 7, 9, 2, 4, 6, 8, 10). Write a program to perform following operations: 
+```python
 t1=(1,2,5,7,9,2,4,6,8,10)
+```
 # a. Print half the values of the tuple in one line and the other half in the next line.
+```python
 half = len(t1)//2
 print(t1[:half])
 print(t1[half:])
+```
 # b. Print another tuple whose values are even numbers in the given tuple.
+```python
 even_tuple = tuple(i for i in t1 if i%2==0)
 print(even_tuple)
+```
 # c. Concatenate a tuple t2=(11,13,15) with t1.
+```python
 t2=(11,13,15)
 print(t1+t2)
+```
 # d. Return maximum and minimum value from this tuple
+```python
 print("Max:", max(t1))
 print("Min:", min(t1))
 
+```
 
 # 13. Write a program to accept a name from a user. Raise and handle appropriate exception(s) if the text entered by the user contains digits and/or special characters.
+```python
 class InvalidNameError(Exception):
     """Custom exception for invalid names"""
     pass
@@ -282,3 +313,4 @@ try:
     print(f"Hello, {valid_name}!")
 except InvalidNameError as e:
     print("Error:", e)
+```
